@@ -88,7 +88,7 @@ public class AccountController : Controller
         HttpContext.Session.SetInt32(SessionUserId, newUser.Id);
 
         // 7. Redirect to the home page (or dashboard).
-        return RedirectToAction("MoviesIndex", "Movies");
+        return RedirectToAction("JokesIndex", "Jokes");
     }
 
     // --- LOGIN GET ACTION --- //
@@ -176,21 +176,20 @@ public class AccountController : Controller
         // use userId to get their email
         var user = await _context
             .Users.AsNoTracking()
-            // .Include(u => u.Movies)
+            // .Include(u => u.Jokes)
             // .Include(u => u.Ratings)
             .SingleOrDefaultAsync(u => u.Id == userId);
 
-        // pass the user's email to the view
-        ViewBag.UserEmail = user.Email;
-        ViewBag.UserName = user.UserName;
-
-        // count movies added by this user
-        // count movies rated by this user
-        ViewBag.MoviesAdded = await _context.Jokes.CountAsync(m => m.UserId == userId);
-        ViewBag.MoviesRated = await _context.Jokes.CountAsync(r => r.UserId == userId);
+        var vm = new ProfileViewModel
+        {
+            UserEmail = user.Email,
+            UserName = user.UserName,
+            JokesAdded = await _context.Jokes.CountAsync(m => m.UserId == userId),
+            JokesRated = await _context.Jokes.CountAsync(r => r.UserId == userId),
+        };
 
         return View();
     }
 }
 
-// ALRIGHT, WE'RE GETTING IT DONE!
+// Ayyyy this was a lot of fun!

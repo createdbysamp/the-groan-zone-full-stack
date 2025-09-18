@@ -13,6 +13,10 @@ public class ErrorController : Controller
             // Serve a custom view for 404 errors
             return View("PageNotFound");
         }
+        else if (code == 403)
+            return View("Forbidden");
+        else if (code == 400)
+            return View("BadRequest");
 
         // Optional: handle other codes
         return View("ServerError");

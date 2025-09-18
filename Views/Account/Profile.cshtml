@@ -1,16 +1,19 @@
+@model ProfileViewModel
+
 @{
 
   ViewData["Title"] = "User Profile";
+  var user = Model;
 
 
 }
 
 
 <h1>Profile Page!</h1>
-<p><strong>Username:</strong> @ViewBag.UserName</p>
-<p><strong>Email:</strong> @ViewBag.UserEmail</p>
+<p><strong>Username:</strong> @user.UserName</p>
+<p><strong>Email:</strong> @user.UserEmail</p>
 
 <br>
 <br>
-<p><strong>Jokes Added: </strong>@ViewBag.JokesAdded</p>
-<p><strong>Jokes Rated: </strong>@ViewBag.JokesRated</p>
+<p><strong>Jokes Added: </strong>@user.JokesAdded</p>
+<p><strong>Jokes Rated: </strong>@user.JokesRated</p>
