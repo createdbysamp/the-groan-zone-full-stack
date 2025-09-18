@@ -188,7 +188,7 @@ public class AccountController : Controller
             JokesRated = await _context.Ratings.CountAsync(r => r.UserId == userId),
         };
 
-        return View();
+        return View(vm);
     }
 }
 
