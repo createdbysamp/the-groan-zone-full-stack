@@ -21,7 +21,7 @@
 }
 else
 {
-  <table class="table table-striped">
+  @* <table class="table table-striped">
     <thead>
       <tr>
         <th>Title</th>
@@ -49,5 +49,33 @@ else
         </tr>
       }
     </tbody>
-  </table>
+  </table> *@
+@foreach (var joke in jokes) {
+
+
+
+<div class="card card-margin">
+            <div class="card-header no-border">
+                <span class="card-title">Dad: @joke.AuthorUsername</span>
+            </div>
+            <div class="card-body">       
+                        <div class="card-title"> 
+                            <strong class="">Set-up:</strong>
+                            <span class="">@joke.SetUp</span>
+                        </div>
+                        <div class="card-body"> 
+                            <strong class="">Punchline:</strong>
+                            <span class=""></span>
+                </div>
+            </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-sm btn-flash-border-primary">view</a>
+                        @if (Context.Session.GetInt32("userId") == joke.UserId)
+          {
+          <a href="@joke.Id/edit">edit</a> <a href="@joke.Id/delete">delete</a>
+          }
+                    </div>
+        </div>
 }
+}
+

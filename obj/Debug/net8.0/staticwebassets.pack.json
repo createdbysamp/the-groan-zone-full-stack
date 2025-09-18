@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/projectbundle/GroanZone.bundle.scp.css",
-      "PackagePath": "staticwebassets/GroanZone.bundle.scp.css"
-    },
-    {
       "Id": "/Users/peezyg/Desktop/full-stack/GroanZone/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

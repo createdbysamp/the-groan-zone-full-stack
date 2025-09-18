@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jUJhkTWa8puyPS4MZo7TzZlBVmapPG0Ywe7CZ67ITLA=",
+  "Hash": "pSNQf0syqm6pzZiIQA285xkvPY0Nl34kI78eeEWIjCU=",
   "Source": "GroanZone",
   "BasePath": "_content/GroanZone",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/bundle/GroanZone.styles.css",
-      "SourceId": "GroanZone",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/bundle/",
-      "BasePath": "_content/GroanZone",
-      "RelativePath": "GroanZone.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/bundle/GroanZone.styles.css"
-    },
-    {
-      "Identity": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/projectbundle/GroanZone.bundle.scp.css",
-      "SourceId": "GroanZone",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/projectbundle/",
-      "BasePath": "_content/GroanZone",
-      "RelativePath": "GroanZone.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/scopedcss/projectbundle/GroanZone.bundle.scp.css"
-    },
     {
       "Identity": "/Users/peezyg/Desktop/full-stack/GroanZone/wwwroot/css/site.css",
       "SourceId": "GroanZone",
