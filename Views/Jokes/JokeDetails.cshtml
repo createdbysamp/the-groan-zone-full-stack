@@ -1,0 +1,90 @@
+@model Joke
+@*  updated model to joke instead of viewmodel *@
+
+@{
+
+
+    ViewData["Title"] = "Joke Details";
+    var joke = Model;
+
+    var currentUserId = Context.Session.GetInt32("userId");
+    Rating? userRating = null;
+    if (currentUserId.HasValue)
+    {
+        userRating = joke.Ratings.FirstOrDefault(r => r.UserId == currentUserId.Value);
+    }
+
+}
+
+<h1>Joke Details</h1>
+<div class="container d-flex justify-content-between gap-3">
+    <div class="card col">
+        <div class="card-body">
+            <h3 class="card-title"></h3>
+            <p class="card-text">
+                <strong>Set-Up:</strong> @joke.SetUp</br>
+                <strong>Punchline:</strong> @joke.PunchLine</br>
+            </p>
+            <p class="card-text">
+                <a href="/jokes">Back to List</a>
+                |
+                @if (joke.UserId == currentUserId)
+                {
+                    <a href="@joke.Id/edit">Edit</a>
+                    <a href="@joke.Id/delete"> Delete </a>
+                }
+            </p>
+        </div>
+    </div>
+
+    <div class="card col mx-auto">
+        <div class="card-body">
+            <h3 class="card-title">STATS</h3>
+            <p class="card-text">
+                <strong>Ratings:</strong> @joke.Ratings.Count</br>
+                <strong>Average Rating:</strong>
+                @if (joke.Ratings.Any())
+                {
+                    @Math.Round(joke.Ratings.Average(r => r.RatingValue), 1)
+                }
+                else
+                {
+                    <span class="text-muted">No ratings yet</span>
+                }
+            <ul class="list-group list-unstyled">
+                <strong>Rated by:</strong>
+                @foreach (var rate in joke.Ratings)
+                {
+                    <li>@rate.User!.UserName</li>
+                }
+            </ul>
+            </p>
+            <p class="card-body">
+                @if (userRating != null)
+                {
+                <h4>Your Rating:</h4>
+                <div class="alert alert-warning">
+                    <strong>You rated this joke: @userRating.RatingValue/5</strong>
+                </div>
+            }
+            else
+            {
+                <h4>Rate this joke:</h4>
+                <form asp-action="Rate" asp-controller="Jokes" asp-route-id="@joke.Id" method="post">
+                    <div class="mb-3">
+                        <label for="ratingValue" class="form-label"></label>
+                        <select name="ratingValue" id="ratingValue" class="form-select" required>
+                            <option value="">Select Groan amount...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-danger">Rate</button>
+                </form>
+            }
+            </p>
+        </div>
+    </div>
+</div>

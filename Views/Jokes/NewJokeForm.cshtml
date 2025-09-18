@@ -1,0 +1,24 @@
+@model JokeViewModel
+
+@{
+
+  ViewData["Title"] = "Add a Joke";
+
+
+}
+
+<h1>Add a Dad Joke</h1>
+<form asp-controller="Jokes" asp-action="CreateNewJoke" method="post">
+  <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div class="mb-3">
+    <label class="form-label" asp-for="SetUp">Set-Up</label>
+    <input class="form-control" asp-for="SetUp">
+    <span class="form-text text-danger" asp-validation-for="SetUp"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" asp-for="PunchLine">Punchline</label>
+    <input class="form-control" asp-for="PunchLine">
+    <span class="form-text text-danger" asp-validation-for="PunchLine"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Dad Joke</button>
+</form>

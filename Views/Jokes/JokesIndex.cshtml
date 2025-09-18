@@ -1,0 +1,53 @@
+@using Microsoft.AspNetCore.OutputCaching
+@model JokesIndexViewModel
+
+@{
+
+  ViewData["Title"] = "Jokes Homepage";
+  var jokes = Model.AllJokes;
+  var totalCount = Model.TotalCount;
+}
+
+
+<h1>Community Jokes Home Page!</h1>
+
+<div class="text-end">
+  <a href="/new" class="btn btn-primary">Add a Joke</a>
+</div>
+
+@if (totalCount == 0)
+{
+  <p>No jokes in the database yet.</p>
+}
+else
+{
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Avg Rating</th>
+        <th>Uploaded By</th>
+        <th>Actions</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var joke in jokes)
+      {
+        <tr>
+          <td>@joke.SetUp</td>
+          <td>@joke.PunchLine</td>
+          <td>@joke.AvgRating</td>
+          <td>@joke.AuthorUsername</td>
+          <td><a href="@joke.Id">view</a> 
+          @if (Context.Session.GetInt32("userId") == joke.UserId)
+          {
+          <a href="@joke.Id/edit">edit</a> <a href="@joke.Id/delete">delete</a>
+          }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
