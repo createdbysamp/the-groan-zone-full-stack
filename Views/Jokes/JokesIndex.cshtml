@@ -9,10 +9,12 @@
 }
 
 
-<h1>Community Jokes Home Page!</h1>
-
-<div class="text-end">
-  <a href="/jokes/new" class="btn btn-primary">Add a Joke</a>
+<div class="container mb-3">
+  <h1>Community Jokes Home Page!</h1>
+  
+  <div class="text-end">
+    <a href="/jokes/new" class="btn btn-primary">Add a Joke</a>
+  </div>
 </div>
 
 @if (totalCount == 0)
@@ -33,26 +35,36 @@ else
 @foreach (var joke in jokes) 
 {
 <div class="card card-margin">
-            <div class="card-header no-border">
-                <span class="card-title">Dad: @joke.AuthorUsername</span>
+            <div class="card-header no-border d-flex justify-content-between">
+                <span class="card-title">Dad: <strong>@joke.AuthorUsername</strong></span>
+                <div class="d-flex gap-2"><strong>@joke.AvgRating</strong>😩</div>
             </div>
             <div class="card-body">       
                         <div class="card-title"> 
                             <strong class="">Set-up:</strong>
                             <span class="">@joke.SetUp</span>
                         </div>
-                        <div class="card-body"> 
+                        <div class="card-body text-muted"> 
                             <strong class="">Punchline:</strong>
                             <span class="">@joke.PunchLine</span>
                 </div>
             </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-sm btn-flash-border-primary">view</a>
-                        @if (Context.Session.GetInt32("userId") == joke.UserId)
-          {
-          <a href="@joke.Id/edit">edit</a> <a href="@joke.Id/delete">delete</a>
-          }
+                    <div class="card-footer d-flex justify-content-between">
+                    <div class="text-muted">
+                    <div class="text-end">uploaded at: @joke.CreatedAt
                     </div>
+                    </div>
+                        <div class="d-flex gap-2">
+                          <a href="@joke.Id" class="btn btn-sm btn-outline-primary">view</a>
+                          @if (Context.Session.GetInt32("userId") == joke.UserId)
+                          {
+                          <a class="btn btn-sm btn-outline-success" href="@joke.Id/edit">
+                          edit</a>
+                          <a class="btn btn-sm btn-outline-warning" href="@joke.Id/delete">
+                          delete</a>
+                          }
+                                              </div>
+                        </div>
         </div>
 }
 

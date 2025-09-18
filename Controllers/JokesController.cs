@@ -48,7 +48,7 @@ public class JokesController : Controller
                 SetUp = joke.SetUp,
                 PunchLine = joke.PunchLine,
                 CreatedAt = joke.CreatedAt,
-                UpdatedAt = joke.UpdatedAt,
+                // UpdatedAt = joke.UpdatedAt,
                 AuthorUsername = joke.User?.UserName ?? "Unknown",
                 RatingCount = joke.Ratings.Count, // count ratings for this joke
                 RatedByMe = joke.Ratings.Any(r => r.UserId == uid), // true if userId has rated

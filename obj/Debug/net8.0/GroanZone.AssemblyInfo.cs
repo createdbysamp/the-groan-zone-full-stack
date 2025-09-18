@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GroanZone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7bcc2c6fe98a89d0dfec7e4a97cb6cea43ee64b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65c88083886bf983a4227ceb860b4e8774ed5ac8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GroanZone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GroanZone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

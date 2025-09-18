@@ -26,7 +26,7 @@
                 <strong>Punchline:</strong> @joke.PunchLine</br>
             </p>
             <p class="card-text">
-                <a href="/jokes">Back to List</a>
+                <a href="/jokes/all">Back to List</a>
                 |
                 @if (joke.UserId == currentUserId)
                 {
@@ -64,7 +64,7 @@
                 {
                 <h4>Your Rating:</h4>
                 <div class="alert alert-warning">
-                    <strong>You rated this joke: @userRating.RatingValue/5</strong>
+                    <strong>You rated this joke: @userRating.RatingValue/4 😩</strong>
                 </div>
             }
             else
