@@ -176,8 +176,8 @@ public class AccountController : Controller
         // use userId to get their email
         var user = await _context
             .Users.AsNoTracking()
-            // .Include(u => u.Jokes)
-            // .Include(u => u.Ratings)
+            .Include(u => u.Jokes)
+            .Include(u => u.Ratings)
             .SingleOrDefaultAsync(u => u.Id == userId);
 
         var vm = new ProfileViewModel
@@ -185,7 +185,7 @@ public class AccountController : Controller
             UserEmail = user.Email,
             UserName = user.UserName,
             JokesAdded = await _context.Jokes.CountAsync(m => m.UserId == userId),
-            JokesRated = await _context.Jokes.CountAsync(r => r.UserId == userId),
+            JokesRated = await _context.Ratings.CountAsync(r => r.UserId == userId),
         };
 
         return View();

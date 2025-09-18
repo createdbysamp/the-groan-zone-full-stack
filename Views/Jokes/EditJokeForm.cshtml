@@ -20,6 +20,6 @@
     <input class="form-control" asp-for="PunchLine">
     <span class="form-text text-danger" asp-validation-for="PunchLine"></span>
   </div>
-  <a href="/jokes" class="btn btn-outline-primary">Cancel / Back to list</a>
+  <a href="/jokes/@Model.Id" class="btn btn-outline-primary">Cancel / Back to Joke</a>
   <button type="submit" class="btn btn-primary">Edit Dad Joke</button>
 </form>
