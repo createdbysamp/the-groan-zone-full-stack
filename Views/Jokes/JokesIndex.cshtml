@@ -12,7 +12,7 @@
 <h1>Community Jokes Home Page!</h1>
 
 <div class="text-end">
-  <a href="/new" class="btn btn-primary">Add a Joke</a>
+  <a href="/jokes/new" class="btn btn-primary">Add a Joke</a>
 </div>
 
 @if (totalCount == 0)
@@ -21,22 +21,7 @@
 }
 else
 {
-  @* <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Avg Rating</th>
-        <th>Uploaded By</th>
-        <th>Actions</th>
-
-
-      </tr>
-    </thead>
-    <tbody>
-      @foreach (var joke in jokes)
-      {
-        <tr>
-          <td>@joke.SetUp</td>
+  @*         <td>@joke.SetUp</td>
           <td>@joke.PunchLine</td>
           <td>@joke.AvgRating</td>
           <td>@joke.AuthorUsername</td>
@@ -44,16 +29,9 @@ else
           @if (Context.Session.GetInt32("userId") == joke.UserId)
           {
           <a href="@joke.Id/edit">edit</a> <a href="@joke.Id/delete">delete</a>
-          }
-          </td>
-        </tr>
-      }
-    </tbody>
-  </table> *@
-@foreach (var joke in jokes) {
-
-
-
+          } *@
+@foreach (var joke in jokes) 
+{
 <div class="card card-margin">
             <div class="card-header no-border">
                 <span class="card-title">Dad: @joke.AuthorUsername</span>
@@ -65,7 +43,7 @@ else
                         </div>
                         <div class="card-body"> 
                             <strong class="">Punchline:</strong>
-                            <span class=""></span>
+                            <span class="">@joke.PunchLine</span>
                 </div>
             </div>
                     <div class="card-footer">
@@ -77,5 +55,6 @@ else
                     </div>
         </div>
 }
+
 }
 

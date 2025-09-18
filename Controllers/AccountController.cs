@@ -141,7 +141,7 @@ public class AccountController : Controller
         HttpContext.Session.SetInt32(SessionUserId, userExists.Id);
 
         // 6. Redirect to the home page
-        return RedirectToAction("MoviesIndex", "Movies");
+        return RedirectToAction("JokesIndex", "Jokes");
     }
 
     // --- HTTP GET for LOGOUT CONFIRMATION --- //

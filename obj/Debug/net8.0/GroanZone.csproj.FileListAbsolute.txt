@@ -107,3 +107,4 @@
 /Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/GroanZone.genruntimeconfig.cache
 /Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/ref/GroanZone.dll
 /Users/peezyg/Desktop/full-stack/GroanZone/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/peezyg/Desktop/full-stack/GroanZone/obj/Debug/net8.0/GroanZone.sourcelink.json
